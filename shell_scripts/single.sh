@@ -1,23 +1,34 @@
-#!/usr/bash
+#!/usr/bin/bash
 
-# ÓÃ»§Êı×é
-arr_user = ("root", "user")
+#ç”¨æˆ·æ•°ç»„
+arr_user=("user")
 
-# ËùÊôÓÃ»§×é
-arr_group = "root"
+# æ‰€å±ç”¨æˆ·ç»„
+arr_group="user"
 
-# Ñ­»·Êı×é
+#result=`awk -F: 'NR==1{print $1}' /etc/group|grep ${arr_group}`
+result=$(grep "user" /etc/group|awk -F: 'NR==1{print $1}')
+
+#å¦‚æœç”¨æˆ·ç»„ä¸å­˜åœ¨
+if [ ${result} != $arr_group ]
+then
+  eval "sudo groupadd ${arr_group}"
+#elif [ "${result}" == "$arr_group" ]
+#then
+#   echo "a ç­‰äº b"
+fi
+
+#å¾ªç¯æ•°ç»„
 for((i=0;i<${#arr_user[*]};i++))
 do
-  # Ìí¼ÓÓÃ»§
+  #æ·»åŠ ç”¨æˆ·ï¼Œåˆ›å»ºåä¼šå¸¦é…ç½®æ–‡ä»¶
   eval "sudo useradd -d /usr1/${arr_user[i]} -g ${arr_group} ${arr_user[i]}"
 
-  # ĞŞ¸ÄÃÜÂë   ÃüÁî1
-  # echo 123456|passwd --stdin ${arr_user[i]}
-  # ĞŞ¸ÄÃÜÂë   ÃüÁî2
+  #ä¿®æ”¹å¯†ç    å‘½ä»¤1
+  #echo 123456|passwd --stdin ${arr_user[i]}
+  #ä¿®æ”¹å¯†ç    å‘½ä»¤2
   echo "${arr_user[i]}:123456"|chpasswd
 
-  # Ìí¼ÓÓÃ»§ÖÁ sudoers ÎÄ¼ş£¬Ê¹ÓÃ sudo ÔËĞĞ¸Ã½Å±¾£¬>> Îª×·¼ÓÖØ¶¨Ïò
+  #æ·»åŠ ç”¨æˆ·è‡³ sudoers æ–‡ä»¶ï¼Œä½¿ç”¨ sudo è¿è¡Œè¯¥è„šæœ¬ï¼Œ>> ä¸ºè¿½åŠ é‡å®šå‘
   echo "${arr_user[$i]}    ALL=(ALL)       ALL" >> /etc/sudoers
 done
-
