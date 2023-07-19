@@ -15,6 +15,7 @@ server.register_blueprint(admin, url_prefix="/admin")
 server.register_blueprint(user, url_prefix="/user")
 
 
+# http://0.0.0.0:8080/admin/show
 if __name__ == '__main__':
     # print(server.url_map)
     # 定义app在8080端口运行

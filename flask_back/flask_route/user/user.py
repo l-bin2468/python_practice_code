@@ -3,6 +3,8 @@
 # Date: 2022/10/26 22:36
 # Describe:
 from flask import Blueprint, render_template
+
+# 通过blueprint管理url
 user = Blueprint("user", __name__)
 
 

@@ -4,6 +4,7 @@
 # Describe:
 from flask import render_template, request, Blueprint
 
+# 通过blueprint管理url
 cus = Blueprint("cus", __name__)
 
 
@@ -27,7 +28,7 @@ def submit():
         name = request.args.get("name")
         age = request.args.get("age")
     # 如果获取的数据为空
-    if len(name) == 0 or len(age) ==0:
+    if len(name) == 0 or len(age) == 0:
         return {'message': "error!"}
     else:
         return {'message': "success!", 'name': name, 'age': age}
