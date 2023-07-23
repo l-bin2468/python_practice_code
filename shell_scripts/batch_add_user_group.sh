@@ -7,7 +7,7 @@ arr_user=("user")
 arr_group="user"
 
 #result=`awk -F: 'NR==1{print $1}' /etc/group|grep ${arr_group}`
-result=$(grep "user" /etc/group|awk -F: 'NR==1{print $1}')
+result=$(grep ${arr_group} /etc/group|awk -F: 'NR==1{print $1}')
 
 #如果用户组不存在
 if [ ${result} != $arr_group ]
