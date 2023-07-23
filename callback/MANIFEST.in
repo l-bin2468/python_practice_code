@@ -1,0 +1,2 @@
+# 如果不需要递归，可以把recursive-include改成include
+recursive-include package *.tar.gz

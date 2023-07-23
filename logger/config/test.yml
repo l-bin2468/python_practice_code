@@ -1,0 +1,44 @@
+url: www
+---
+log:
+  file_name: default.log
+  level:
+    console_level: DEBUG
+    file_level: INFO
+  format:
+    console_fmt: '%(log_color)s%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s: %(message)s'
+    file_fmt: '%(asctime)s - %(name)s - [%(levelname)s] - %(message)s'
+  backupCount: 5
+  when: S
+  regular: '^\w{7}\.\w{3}\.\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}(\.\w+)?$'
+
+---
+#单个属性
+country: china
+#中间一定要有一个空格
+
+#(对象)多个属性
+user:
+  name: sichen
+  age: 17
+#注意 : 层级之间名称不能重复
+
+#写一个数组
+likes:
+  - game
+  - music
+  - sleep
+#用-号 , 中间加空格
+#简单写法
+likes2: [game, music, sleep]
+
+#对象数组 :
+user2:
+  - name: zhangsan
+    age: 17
+  - name: li
+    age: 18
+
+#简单写法 :
+user3: [{name: zhangsan, age: 17},{name: sichen, age: 17}]
+

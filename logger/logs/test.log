@@ -1,0 +1,12 @@
+2022-10-11 21:27:12,091 - FRAME - INFO - info message
+2022-10-11 21:27:12,091 - FRAME - WARNING - warning message
+2022-10-11 21:27:12,092 - FRAME - ERROR - error message
+2022-10-11 21:27:12,092 - FRAME - CRITICAL - critical message
+2023-04-27 12:13:00,939 - FRAME - INFO - info message
+2023-04-27 12:13:00,939 - FRAME - WARNING - warning message
+2023-04-27 12:13:00,939 - FRAME - ERROR - error message
+2023-04-27 12:13:00,939 - FRAME - CRITICAL - critical message
+2023-04-27 12:25:33,679 - FRAME - INFO - info message
+2023-04-27 12:25:33,679 - FRAME - WARNING - warning message
+2023-04-27 12:25:33,679 - FRAME - ERROR - error message
+2023-04-27 12:25:33,679 - FRAME - CRITICAL - critical message

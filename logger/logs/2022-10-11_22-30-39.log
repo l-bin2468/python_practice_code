@@ -1,0 +1,2 @@
+[2022-10-11 22:30:46,486] [7936] [WARNING] - log_time.<module> (log_time.py:114) - this is a warning message
+[2022-10-11 22:30:46,491] [7936] [INFO] - log_time.<module> (log_time.py:112) - this is info message
