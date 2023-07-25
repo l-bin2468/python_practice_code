@@ -1,0 +1,23 @@
+syntax = 'proto2';
+package main;
+
+message User{
+    required int32 index = 1;
+    required string name = 2;
+    required Phone content = 3;
+}
+
+message Phone{
+    required string phoneType = 1;
+    required int32 number = 2;
+}
+
+enum PhoneType{
+    Telephone = 0;
+    Home = 1;
+    Work = 2;
+}
+
+message Remark{
+  required string note = 1;
+}
