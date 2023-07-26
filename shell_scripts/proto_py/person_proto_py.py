@@ -1,4 +1,5 @@
-#coding=utf-8
+#!/usr/bin/python
+# #coding=utf-8
 # file: test_proto.py
 
 import person_pb2

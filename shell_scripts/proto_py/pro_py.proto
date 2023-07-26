@@ -1,0 +1,22 @@
+syntax = "proto2";
+package infos;
+
+message Person{
+    required int32 age = 2;
+    required string name = 3;
+}
+
+message One{
+    required uint32 id = 1;
+    required Person person = 2;
+}
+
+message Two{
+    required uint32 x = 1;
+    required One one = 2;
+}
+
+message Three{
+    required uint32 y = 1;
+    required Two two = 2;
+}
