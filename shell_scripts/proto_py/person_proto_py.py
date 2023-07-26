@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # #coding=utf-8
 # file: test_proto.py
-
 import person_pb2
+
 
 def setInfo(a_info):
     a_info.id = 1
@@ -12,7 +12,7 @@ def setInfo(a_info):
     score1 = a_person.score.add()
     score1.object = "python"
     score1.score = 90
-    score2= a_person.score.add()
+    score2 = a_person.score.add()
     score2.object = "c++"
     score2.score = 88
     phone = a_person.number
@@ -21,11 +21,13 @@ def setInfo(a_info):
     # print(a_info)
     return a_info
 
+
 first_info = person_pb2.One()
 one_info = setInfo(first_info)
 print(one_info)
 proto_info = one_info.SerializeToString()
 print(proto_info)
+
 
 def getInfo(wanted_info):
     wanted_id = wanted_info.id
@@ -36,6 +38,7 @@ def getInfo(wanted_info):
     print("his phoneType:", wanted_info.people.number.type)
     if wanted_info.people.number.type == wanted_info.people.PhoneType.HOME:
         print("his phonetype: HOME")
+
 
 first_parsed = person_pb2.One()
 first_parsed.ParseFromString(proto_info)

@@ -3,7 +3,7 @@
 # Author: Komorebi
 # Date: 2023/7/26 21:52
 # Describe:
-from pro_py_pb2 import *
+from proto_pb2 import *
 
 person = Person()
 person.age = 20

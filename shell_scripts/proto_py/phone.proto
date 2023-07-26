@@ -4,7 +4,7 @@ package main;
 message User{
     required int32 index = 1;
     required string name = 2;
-    required Phone content = 3;
+    repeated Phone content = 3;
 }
 
 message Phone{
