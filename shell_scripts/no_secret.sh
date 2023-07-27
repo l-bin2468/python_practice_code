@@ -20,6 +20,7 @@ expect "${match_str}" {send "ls -l"}
 #输出变量
 puts "${match_str}"
 
+#expect执行结束，退出
 expect eof
 ##允许用户交互，权限交给控制台
 #interact
