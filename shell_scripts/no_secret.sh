@@ -1,23 +1,26 @@
-#!/usr/bin/env expect
+#!/usr/bin/env bash
 
+host=
+user=
+password=
+match_str=
+
+expect <<ENF
+#定义变量
 set timeout 5
 
-spawn ssh mrswhite@192.168.37.9
+#交互程序开始后面跟命令或者指定程序
+spawn ssh ${user}@${host}
 
-expect "*password:"
+#获取匹配信息匹配成功则执行expect后面的程序动作
+#用于向进程发送字符串
+expect "login:" {send "${user}"}
+expect "Password:" {send "${password}"}
+expect "${match_str}" {send "ls -l"}
 
-send "test20221007\r"
-
-expect "*#"
-
-spawn telnet aixserver
-expect "login:"
-send "mynamer"
-expect "Password:"
-send "mypassr"
-send "lsr"
-send "prtconfr"
 expect eof
+##允许用户交互，权限交给控制台
+#interact
+ENF
 
-interact
-
+pwd
