@@ -17,6 +17,8 @@ spawn ssh ${user}@${host}
 expect "login:" {send "${user}"}
 expect "Password:" {send "${password}"}
 expect "${match_str}" {send "ls -l"}
+#输出变量
+puts "${match_str}"
 
 expect eof
 ##允许用户交互，权限交给控制台
