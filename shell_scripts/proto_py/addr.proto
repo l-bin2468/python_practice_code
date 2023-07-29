@@ -1,7 +1,7 @@
 syntax = "proto2";
-package tutorial;
+package proto_py;
  
-message Person {
+message Addr {
   required string name = 1;
   required int32 id = 2;
   optional string email = 3;
@@ -21,5 +21,5 @@ message Person {
 }
  
 message AddressBook {
-  repeated Person person = 1;
+  repeated Addr addr = 1;
 }

@@ -22,7 +22,7 @@ def setInfo(a_info):
     return a_info
 
 
-first_info = person_pb2.One()
+first_info = person_pb2.PersonOne()
 one_info = setInfo(first_info)
 print(one_info)
 proto_info = one_info.SerializeToString()
@@ -40,7 +40,7 @@ def getInfo(wanted_info):
         print("his phonetype: HOME")
 
 
-first_parsed = person_pb2.One()
+first_parsed = person_pb2.PersonOne()
 first_parsed.ParseFromString(proto_info)
 # print(first_parsed)
 getInfo(first_parsed)

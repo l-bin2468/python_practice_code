@@ -5,18 +5,18 @@
 # Describe:
 from proto_pb2 import *
 
-person = Person()
-person.age = 20
-person.name = "张三"
+proto = Proto()
+proto.p_age = 20
+proto.p_name = "张三"
 print("person")
-print(person)
-print(person.SerializeToString())
+print(proto)
+print(proto.SerializeToString())
 
 one = One()
 one.id = 3
-operson = one.person
-operson.age = 30
-operson.name = "李四"
+operson = one.proto
+operson.p_age = 30
+operson.p_name = "李四"
 print("one")
 print(one)
 
@@ -24,8 +24,8 @@ two = Two()
 two.x = 1920
 tone = two.one
 tone.id = 39
-tone.person.age = 40
-tone.person.name = "王二"
+tone.proto.p_age = 40
+tone.proto.p_name = "王二"
 # two.one.MergeFrom(one)
 print("two")
 print(two)

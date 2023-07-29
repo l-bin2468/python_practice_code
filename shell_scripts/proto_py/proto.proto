@@ -1,14 +1,14 @@
 syntax = "proto2";
-package infos;
+package proto_py;
 
-message Person{
-    required int32 age = 2;
-    required string name = 3;
+message Proto{
+    required uint32 p_age = 2;
+    required string p_name = 3;
 }
 
 message One{
     required uint32 id = 1;
-    required Person person = 2;
+    required Proto proto = 2;
 }
 
 message Two{
