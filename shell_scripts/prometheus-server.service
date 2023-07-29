@@ -3,7 +3,7 @@ Description=Prometheus instance
 After=network.target
 
 [Service]
-Type=Simple
+Type=simple
 ExecStart=/usr1/software/prometheus-2.37.8/prometheus --config.file=/usr1/software/prometheus-2.37.8/prometheus.yml
 
 [Install]

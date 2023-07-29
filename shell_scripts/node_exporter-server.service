@@ -3,7 +3,7 @@ Description=Node_exporter instance
 After=network.target
 
 [Service]
-Type=Simple
+Type=simple
 ExecStart=/usr1/software/node_exporter-1.4.0/node_exporter --web.listen-address=0.0.0.0:9100
 
 [Install]
