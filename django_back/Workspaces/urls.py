@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('jango/list', views.list, name="list"),
     path('jango/testList', views.testList, name="testList"),
+    path('jango/create', views.create, name="create"),
+    path('jango/select', views.select, name="select"),
 ]

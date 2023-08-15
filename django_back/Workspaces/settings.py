@@ -35,9 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
+    # 'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    # 'django.contrib.staticfiles',
     'corsheaders',  # 添加跨域
     'jango.apps.JangoConfig',
 ]
@@ -116,23 +116,23 @@ WSGI_APPLICATION = 'Workspaces.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'mysql',
-#         'HOST': '192.168.3.37',
-#         'PORT': '3306',
-#         'USER': 'root',
-#         'PASSWORD': '123456',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'jango',
+        'HOST': '192.168.3.37',
+        'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': '123456',
+    }
+}
 
 
 # Password validation

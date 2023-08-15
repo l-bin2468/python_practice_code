@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
 <!--    <h1>{{ msg }}</h1>-->
-    <input type= 'text' v-model="page" placeholder="edit me">
+    <input type= 'text' v-model="page" placeholder="edit me"><br/>
     <button @click="test()">CheckThis</button><br/>
     <button @click="test_post()">CheckThis</button><br/>
     <li>{{ text }}</li>
@@ -10,7 +10,7 @@
 
 <script>
 import axios from 'axios'
-import qs from "querystring"
+// import qs from "querystring"
 
 
 // export default {
