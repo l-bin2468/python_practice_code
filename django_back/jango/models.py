@@ -5,7 +5,7 @@ from django.utils import timezone
 
 
 class BaseModel(db.Model):
-    id = db.AutoField("ID", primary_key=True)  # 自增列。主键
+    id = db.BigAutoField("ID", primary_key=True)  # 自增列。主键
     create_time = db.DateTimeField(verbose_name="创建时间", auto_now=True)  # 创建时，自动生成时间
     update_time = db.DateTimeField("更新时间", auto_now_add=True)  # 更新时，自动更新为当前时间
     delete_time = db.DateTimeField("删除时间", default=timezone.now)  # 修改字段保存当前时间
@@ -17,6 +17,7 @@ class BaseModel(db.Model):
 
 class Info(BaseModel):
     name = db.CharField(max_length=255, null=False)  # 字段长度。是否为空
+    total = db.IntegerField(null=False)  # 字段长度。是否为空
 
     class Meta:
         # 自定义表名。没有时，表名为：应用名称_类名

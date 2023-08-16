@@ -19,9 +19,10 @@ from jango import views
 
 # path(路由, 视图函数, 别名)
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('jango/list', views.list, name="list"),
-    path('jango/testList', views.testList, name="testList"),
+    # path('admin/', admin.site.urls),
+
+    # path('jango/list', views.list, name="list"),
+    # path('jango/testList', views.testList, name="testList"),
     path('jango/create', views.create, name="create"),
     path('jango/select', views.select, name="select"),
 ]
