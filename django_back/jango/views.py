@@ -86,6 +86,16 @@ def select(request):
     field_list = Info.objects.values("name")
     print(field_list)
 
+    res = Info.objects.values_list("total", "name")
+    results = {}
+    for val in res:
+        key = val[0]
+        value = val[1]
+        try:
+            results[key].append(value)
+        except KeyError:
+            results[key] = [value]
+    print(results)
     return HttpResponse("OK")
 
 
