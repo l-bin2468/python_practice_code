@@ -11,7 +11,7 @@ from jango.models import Info
 #     resp = request.body
 #     json_result = json.loads(resp)
 #     print(json_result)
-#     return JsonResponse(json_result)
+#     return JsonResponse(json_result, status=200, safe=False)
 #
 #
 # def testList(request):
@@ -88,3 +88,6 @@ def select(request):
 
     return HttpResponse("OK")
 
+
+def delete(request):
+    Info.objects.filter(id=3).delete()
