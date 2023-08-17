@@ -78,14 +78,16 @@ def select(request):
     field_list = Info.objects.values_list("name")
     print(field_list)
 
-    # 查询某个字段的所有值(列表)
-    field_list = Info.objects.values_list("name", flat=True)
-    print(field_list)
-
-    # 查询某个字段的所有值(字典列表)
-    field_list = Info.objects.values("name")
-    print(field_list)
-
+    res = Info.objects.values_list("total", "name")
+    results = {}
+    for val in res:
+        key = val[0]
+        value = val[1]
+        try:
+            results[key].append(value)
+        except KeyError:
+            results[key] = [value]
+    print(results)
     return HttpResponse("OK")
 
 
