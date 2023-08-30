@@ -1,10 +1,10 @@
 [Unit]
-Description=Prometheus instance
+Description=PushGateWay instance
 After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr1/software/prometheus-2.37.8/prometheus --config.file=/usr1/software/prometheus-2.37.8/prometheus.yml
+ExecStart=/usr1/software/pushgateway-1.4.3/pushgateway
 
 [Install]
 WantedBy=multi-user.target

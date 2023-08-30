@@ -9,5 +9,6 @@ ExecStart=/usr1/software/node_exporter-1.4.0/node_exporter --web.listen-address=
 [Install]
 WantedBy=multi-user.target
 
+# /usr/lib/systemd/system/
 # systemctl daemon-reload
 # systemctl enable prometheus-server.service
