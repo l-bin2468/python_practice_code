@@ -11,6 +11,7 @@ from jango.models import Info
 #     resp = request.body
 #     json_result = json.loads(resp)
 #     print(json_result)
+#     safe=False 允许非字典对象进行序列化
 #     return JsonResponse(json_result, status=200, safe=False)
 #
 #
@@ -101,3 +102,17 @@ def select(request):
 
 def delete(request):
     Info.objects.filter(id=3).delete()
+
+
+def request_body(request):
+    # 获取请求体
+    req = request.POST
+    req_data = json.dumps(req)
+    req_data = json.loads(req_data)
+    req_data.get("key")
+    dict = {}
+    new_result = {}
+    for i in range(len(dict)):
+        new_key = ""
+        # 删除旧键，给新键
+        new_result[i][new_key] = new_result[i].pop("key")
